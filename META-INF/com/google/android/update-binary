@@ -1,0 +1,110 @@
+#!/sbin/sh
+OUTFD=$2
+ZIP=$3
+
+SYSTEMLIB=/system/lib
+
+ui_print() {
+  echo -n -e "ui_print $1\n" > /proc/self/fd/$OUTFD
+  echo -n -e "ui_print\n" > /proc/self/fd/$OUTFD
+}
+
+ch_con() {
+  LD_LIBRARY_PATH=$SYSTEMLIB /system/toolbox chcon -h u:object_r:system_file:s0 $1
+  LD_LIBRARY_PATH=$SYSTEMLIB /system/bin/toolbox chcon -h u:object_r:system_file:s0 $1
+  chcon -h u:object_r:system_file:s0 $1
+  LD_LIBRARY_PATH=$SYSTEMLIB /system/toolbox chcon u:object_r:system_file:s0 $1
+  LD_LIBRARY_PATH=$SYSTEMLIB /system/bin/toolbox chcon u:object_r:system_file:s0 $1
+  chcon u:object_r:system_file:s0 $1
+}
+
+ch_con_ext() {
+  LD_LIBRARY_PATH=$SYSTEMLIB /system/toolbox chcon $2 $1
+  LD_LIBRARY_PATH=$SYSTEMLIB /system/bin/toolbox chcon $2 $1
+  chcon $2 $1
+}
+
+ln_con() {
+  LD_LIBRARY_PATH=$SYSTEMLIB /system/toolbox ln -s $1 $2
+  LD_LIBRARY_PATH=$SYSTEMLIB /system/bin/toolbox ln -s $1 $2
+  ln -s $1 $2
+  ch_con $2
+}
+
+set_perm() {
+  chown $1.$2 $4
+  chown $1:$2 $4
+  chmod $3 $4
+  ch_con $4
+  ch_con_ext $4 $5
+}
+
+cp_perm() {
+  rm $5
+  if [ -f "$4" ]; then
+    cat $4 > $5
+    set_perm $1 $2 $3 $5 $6
+  fi
+}
+
+cat /system/bin/toolbox > /system/toolbox
+chmod 0755 /system/toolbox
+ch_con /system/toolbox
+ui_print ""
+ui_print "######################################"
+ui_print "~   Flashable Font Patch Installer   ~"
+ui_print "=> Script Writting by Miya 06/06/17 <="
+ui_print "-> forum.mifans.web.id <-"
+ui_print "######################################"
+ui_print ""
+
+ui_print "1. Prepare..."
+ui_print ""
+ui_print "2. Mount /system..."
+mount /system
+mount -o rw,remount /system
+mount -o rw,remount /system /system
+
+ui_print "3.Removing Old Fonts..."
+rm -rf /system/fonts/Roboto-Black.ttf
+rm -rf /system/fonts/Roboto-BlackItalic.ttf
+rm -rf /system/fonts/Roboto-Bold.ttf
+rm -rf /system/fonts/Roboto-BoldItalic.ttf
+rm -rf /system/fonts/RobotoCondensed-Bold.ttf
+rm -rf /system/fonts/RobotoCondensed-BoldItalic.ttf
+rm -rf /system/fonts/RobotoCondensed-Italic.ttf
+rm -rf /system/fonts/RobotoCondensed-Light.ttf
+rm -rf /system/fonts/RobotoCondensed-LightItalic.ttf
+rm -rf /system/fonts/RobotoCondensed-Regular.ttf
+rm -rf /system/fonts/Roboto-Italic.ttf
+rm -rf /system/fonts/Roboto-Light.ttf
+rm -rf /system/fonts/Roboto-LightItalic.ttf
+rm -rf /system/fonts/Roboto-Medium.ttf
+rm -rf /system/fonts/Roboto-MediumItalic.ttf
+rm -rf /system/fonts/Roboto-Regular.ttf
+rm -rf /system/fonts/Roboto-Thin.ttf
+rm -rf /system/fonts/Roboto-ThinItalic.ttf
+
+ui_print "4. Finding patch default MIUI fonts..."
+FONTS_CONFIG=/system/etc/fonts.xml
+FONTS_SYSTEM=/system/etc/system_fonts.xml
+FONTS_FALLB=/system/etc/fallback_fonts.xml
+
+ui_print "5. Reading Configurations..."
+if [ -f $FONTS_CONFIG ];
+then
+	ui_print "6. Checking config..."
+#	sed -i '/ {/,/}/d' $FONTS_CONFIG
+fi
+
+sed -i '/{/,/}/d' $FONTS_CONFIG
+
+ui_print "7. Creating backups..."
+cd /tmp
+mkdir ffpi
+cd ffpi
+unzip -o "$ZIP"
+
+ui_print "8. Copying to /system..."
+
+
