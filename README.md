@@ -22,6 +22,9 @@ This scripts will check the fonts on folder /fonts/ *(in zip)* and will duplicat
 ## So Simple Right? 😎
 
 # Now What?
-Now you can search font you like on <a href="//google.com/fonts/">Google Fonts</a> or <a href="www.dafont.com">Dafont</a> or whatever, Download and unzip font pack. Move all .ttf font to this folder /fonts/ compress as zip and flash to your devices.
+Now you can search font you like on <a href="//google.com/fonts/">Google Fonts</a> or <a href="http://www.dafont.com">Dafont</a> or whatever, Download and unzip font pack. Move all .ttf font to this folder /fonts/ compress as zip and flash to your devices.
+<br /><br /><br /><br />
 
+Kind Regards<br />
+Miyaku 💋
 
