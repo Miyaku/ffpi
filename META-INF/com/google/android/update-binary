@@ -129,7 +129,7 @@ cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf  /system/fonts/RobotoCondensed-Itali
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/RobotoCondensed-Light.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf  /system/fonts/RobotoCondensed-LightItalic.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/RobotoCondensed-Regular.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf Italic.ttf /system/fonts/Roboto-Italic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf /system/fonts/Roboto-Italic.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/Roboto-Light.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf /system/fonts/Roboto-LightItalic.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/Roboto-Medium.ttf
@@ -148,7 +148,7 @@ cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf  /system/fonts/RobotoCondensed-Itali
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/RobotoCondensed-Light.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf  /system/fonts/RobotoCondensed-LightItalic.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/RobotoCondensed-Regular.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf Italic.ttf /system/fonts/Roboto-Italic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf /system/fonts/Roboto-Italic.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/Roboto-Light.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf /system/fonts/Roboto-LightItalic.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/Roboto-Medium.ttf
@@ -158,24 +158,26 @@ cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/Roboto-Thin.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf /system/fonts/Roboto-ThinItalic.ttf
 fi #correctly font type
 ui_print "10.2 Recheking available fonts type..."
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Black.ttf /system/fonts/Roboto-Black.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*BlackItalic.ttf /system/fonts/Roboto-BlackItalic.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Bold.ttf /system/fonts/Roboto-Bold.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*BoldItalic.ttf /system/fonts/Roboto-BoldItalic.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Bold.ttf /system/fonts/RobotoCondensed-Bold.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*BoldItalic.ttf /system/fonts/RobotoCondensed-BoldItalic.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Italic.ttf  /system/fonts/RobotoCondensed-Italic.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Light.ttf /system/fonts/RobotoCondensed-Light.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*LightItalic.ttf  /system/fonts/RobotoCondensed-LightItalic.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Regular.ttf /system/fonts/RobotoCondensed-Regular.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Italic.ttf /system/fonts/Roboto-Italic.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Light.ttf /system/fonts/Roboto-Light.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*LightItalic.ttf /system/fonts/Roboto-LightItalic.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Medium.ttf /system/fonts/Roboto-Medium.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*MediumItalic.ttf  /system/fonts/Roboto-MediumItalic.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Regular.ttf /system/fonts/Roboto-Regular.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*Thin.ttf /system/fonts/Roboto-Thin.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/*ThinItalic.ttf /system/fonts/Roboto-ThinItalic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Black.ttf /system/fonts/Roboto-Black.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-BlackItalic.ttf /system/fonts/Roboto-BlackItalic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Bold.ttf /system/fonts/Roboto-Bold.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-BoldItalic.ttf /system/fonts/Roboto-BoldItalic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Bold.ttf /system/fonts/RobotoCondensed-Bold.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-BoldItalic.ttf /system/fonts/RobotoCondensed-BoldItalic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-SemiBold.ttf /system/fonts/RobotoCondensed-Bold.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-SemiBoldItalic.ttf /system/fonts/RobotoCondensed-BoldItalic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Italic.ttf  /system/fonts/RobotoCondensed-Italic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Light.ttf /system/fonts/RobotoCondensed-Light.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-LightItalic.ttf  /system/fonts/RobotoCondensed-LightItalic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Regular.ttf /system/fonts/RobotoCondensed-Regular.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Italic.ttf /system/fonts/Roboto-Italic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Light.ttf /system/fonts/Roboto-Light.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-LightItalic.ttf /system/fonts/Roboto-LightItalic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Medium.ttf /system/fonts/Roboto-Medium.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-MediumItalic.ttf  /system/fonts/Roboto-MediumItalic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Regular.ttf /system/fonts/Roboto-Regular.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Thin.ttf /system/fonts/Roboto-Thin.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*-ThinItalic.ttf /system/fonts/Roboto-ThinItalic.ttf
 
 # Cleanup
 ui_print "11. Cleanup..."
