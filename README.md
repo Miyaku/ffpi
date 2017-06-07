@@ -22,7 +22,7 @@ This scripts will check the fonts on folder /fonts/ *(in zip)* and will duplicat
 ## So Simple Right? 😎
 
 # Now What?
-Now you can search font you like on <a href="//google.com/fonts/">Google Fonts</a> or <a href="http://www.dafont.com">Dafont</a> or <a href="https://github.com/Miyaku/ffpi/blob/docs/fonts.zip">Vvhatever</a>, Download and unzip font pack. <br />Now, Download this zip from <a href="https://github.com/Miyaku/ffpi/releases">release page</a> or <a href="https://github.com/Miyaku/ffpi/archive/master.zip">here a master</a>, unzip you can see 2 directory.
+Now you can search font you like on <a href="//google.com/fonts/">Google Fonts</a> or <a href="http://www.dafont.com">Dafont</a> or <a href="https://github.com/Miyaku/ffpi/blob/docs/fonts.zip">Vvhatever</a>, Download and unzip font pack. <br />Now, Download this zip from <a href="https://github.com/Miyaku/ffpi/releases">release page</a> or <a href="https://github.com/Miyaku/ffpi/files/1056751/flashable.fonts.patch.installer.v.1.0.zip">here a master</a>, unzip you can see 2 directory.
 <pre>..
 .META-INF
 .fonts
