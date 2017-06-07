@@ -97,7 +97,7 @@ then
 #	sed -i '/ {/,/}/d' $FONTS_CONFIG
 fi
 
-sed -i '/{/,/}/d' $FONTS_CONFIG
+#	sed -i '/{/,/}/d' $FONTS_CONFIG
 
 ui_print "7. Creating backups..."
 cd /tmp
@@ -105,19 +105,20 @@ mkdir ffpi
 cd ffpi
 unzip -o "$ZIP"
 
+# Force 1 font for all type
 ui_print "8. Copying to /system..."
-cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/Roboto-Regular.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/Bold.ttf /system/fonts/Roboto-Bold.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/Light.ttf /system/fonts/Roboto-Light.ttf
-cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf  /system/fonts/RobotoCondensed-Italic.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*Regular.ttf /system/fonts/Roboto-Regular.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*Regular.ttf /system/fonts/Roboto-Bold.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*Regular.ttf /system/fonts/Roboto-Light.ttf
+cp_perm 0 0 0644 /tmp/ffpi/fonts/*Regular.ttf /system/fonts/RobotoCondensed-Italic.ttf
 
+# Check Android Version to compatible mode
 ui_print "9. Checking Android Version..."
 API=$(cat /system/build.prop | grep "ro.build.version.sdk=" | dd bs=1 skip=21 count=2)
-
 if [ "$API" -ge "21" ];
 then
 ui_print "10. Detected SDK19+ K/L/M/N"
-ui_print "10.1 Duplicate and Creating fonts..."
+ui_print "10.1 Creating fonts for Android 4+..."
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Bold.ttf /system/fonts/Roboto-Black.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf /system/fonts/Roboto-BlackItalic.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Bold.ttf /system/fonts/Roboto-Bold.ttf
@@ -136,10 +137,9 @@ cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf  /system/fonts/Roboto-MediumItalic.t
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/Roboto-Regular.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/Roboto-Thin.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf /system/fonts/Roboto-ThinItalic.ttf
-
 else
 ui_print "10. Older Android SDK19..."
-ui_print "10.1 Duplicate, Removing and Creating fonts..."
+ui_print "10.1 Creating fonts for Android 4-..."
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Bold.ttf /system/fonts/Roboto-Bold.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf /system/fonts/Roboto-BoldItalic.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Bold.ttf /system/fonts/RobotoCondensed-Bold.ttf
@@ -156,8 +156,8 @@ cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf  /system/fonts/Roboto-MediumItalic.t
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/Roboto-Regular.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Regular.ttf /system/fonts/Roboto-Thin.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/Italic.ttf /system/fonts/Roboto-ThinItalic.ttf
-fi
-ui_print "10.2 Recheking available fonts..."
+fi #correctly font type
+ui_print "10.2 Recheking available fonts type..."
 cp_perm 0 0 0644 /tmp/ffpi/fonts/*Black.ttf /system/fonts/Roboto-Black.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/*BlackItalic.ttf /system/fonts/Roboto-BlackItalic.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/*Bold.ttf /system/fonts/Roboto-Bold.ttf
