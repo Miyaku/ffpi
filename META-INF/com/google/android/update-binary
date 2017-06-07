@@ -54,7 +54,7 @@ ui_print ""
 ui_print "######################################"
 ui_print "~   Flashable Font Patch Installer   ~"
 ui_print "=> Script Writting by Miya 06/06/17 <="
-ui_print "-> forum.mifans.web.id <-"
+ui_print "->	forum.mifans.web.id 	<-"
 ui_print "######################################"
 ui_print ""
 
@@ -65,7 +65,7 @@ mount /system
 mount -o rw,remount /system
 mount -o rw,remount /system /system
 
-ui_print "3.Removing Old Fonts..."
+ui_print "3. Removing Old Fonts..."
 rm -rf /system/fonts/Roboto-Black.ttf
 rm -rf /system/fonts/Roboto-BlackItalic.ttf
 rm -rf /system/fonts/Roboto-Bold.ttf
@@ -178,7 +178,7 @@ cp_perm 0 0 0644 /tmp/ffpi/fonts/*-MediumItalic.ttf  /system/fonts/Roboto-Medium
 cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Regular.ttf /system/fonts/Roboto-Regular.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/*-Thin.ttf /system/fonts/Roboto-Thin.ttf
 cp_perm 0 0 0644 /tmp/ffpi/fonts/*-ThinItalic.ttf /system/fonts/Roboto-ThinItalic.ttf
-
+ui_print "10.3 OK!"
 # Cleanup
 ui_print "11. Cleanup..."
 rm /system/toolbox
