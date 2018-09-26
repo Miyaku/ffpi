@@ -32,7 +32,7 @@ Move all .ttf font to this folder /fonts/ compress as zip 2 directory and flash 
 
 # Example
 This a some example<br />
-[Font_VT323.zip](https://github.com/Miyaku/ffpi/files/2418087/Font_VT323.zip)<br />
+[Fonts_VT323.zip](https://github.com/Miyaku/ffpi/files/2418118/Fonts_VT323.zip)
 
 <br /><br /><br /><br />
 
